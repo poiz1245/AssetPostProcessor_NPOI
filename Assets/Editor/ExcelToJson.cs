@@ -39,8 +39,8 @@ public class ExcelToJson : AssetPostprocessor
     // 플레이어 json 데이터 생성 ( json 파일 생성 )
     static void CreateBuildingData()
     {
-        List<ObjData.Attribute> list = new List<ObjData.Attribute>();
-        ObjData attributeList = new();
+        List<ObjDataForJson.Attribute> list = new List<ObjDataForJson.Attribute>();
+        ObjDataForJson attributeList = new ObjDataForJson();
         attributeList.list = list;
      
         using (FileStream stream = File.Open(filePath, FileMode.Open, FileAccess.Read))
@@ -54,7 +54,7 @@ public class ExcelToJson : AssetPostprocessor
                 IRow row = sheet.GetRow(ix);
 
                 //시리얼라이즈를 위한 임시 객체 생성
-                ObjData.Attribute a = new ObjData.Attribute();
+                ObjDataForJson.Attribute a = new ObjDataForJson.Attribute();
 
                 a.productName = (string)row.GetCell(0).StringCellValue;
                 a.productCategory = (string)row.GetCell(1).StringCellValue;

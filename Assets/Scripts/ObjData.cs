@@ -21,3 +21,23 @@ public class ObjData : ScriptableObject
 
     public List<Attribute> list = new List<Attribute>();
 }
+
+[System.Serializable]
+public class ObjDataForJson
+{
+    [System.Serializable]
+    public class Attribute
+    {
+        public string productName;
+        public string productCategory;
+        public string productMaterial;
+        public string Floor;
+        public string objectSize;
+        public int workFlow;
+        public string startDate;
+        public string endDate;
+        public string currentStatus;
+    }
+
+    public List<Attribute> list = new List<Attribute>();
+}
