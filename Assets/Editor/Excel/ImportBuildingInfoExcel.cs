@@ -12,6 +12,12 @@ public class ImportBuildingInfoExcel : AssetPostprocessor
     static readonly string filePath = "Assets/Editor/Data/ObjData.xlsx";
     static readonly string ObjInfoExportPath = "Assets/Resources/Data/ObjInfoData.asset";
 
+    [MenuItem("Excel To Scriptable/Create Data")]
+    static void CreateData()
+    {
+        MakeObjData();
+    }
+
     static void OnPostprocessAllAssets(string[] importedAssets, string[] deletedAssets,
         string[] movedAssets, string[] movedFromAssetPaths)
         
